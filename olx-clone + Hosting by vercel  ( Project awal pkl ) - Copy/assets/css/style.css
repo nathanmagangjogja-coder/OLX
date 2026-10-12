@@ -1,0 +1,110 @@
+/* Custom Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F2F4F5;
+}
+
+/* Product Card Hover Effect */
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Category Horizontal Scroll */
+.category-scroll {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+.category-item {
+    scroll-snap-align: start;
+}
+
+/* Carousel Dots */
+.carousel-dot.active {
+    background-color: #002F34;
+    width: 24px;
+    border-radius: 9999px;
+}
+
+/* Range Slider Custom */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #002F34;
+    margin-top: -8px;
+    cursor: pointer;
+}
+input[type=range]:focus {
+    outline: none;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox img {
+    max-height: 90vh;
+    max-width: 90vw;
+}
+
+/* Responsive Grid */
+@media (max-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Sticky Navbar Shadow on Scroll */
+.navbar-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
